@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="search_cancel_width">50dp</dimen>
+    <dimen name="search_cancel_height">36dp</dimen>
+    <dimen name="search_cancel_margin">14dp</dimen>
+</resources>

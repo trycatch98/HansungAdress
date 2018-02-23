@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">한성대IN\n교직원</string>
+    <string name="login_guide">종합정보시스템 ID/PW를 입력하세요.</string>
+    <string name="id_hint">교직원사번(ID)</string>
+    <string name="id_guide">ID/PW는 학교 서버에 접속할 때만 사용됩니다.</string>
+    <string name="pw_hint">비밀번호(PW)</string>
+    <string name="pw_guide">어떠한 데이터도 수집하지 않습니다.</string>
+    <string name="user_permission">개인정보 취급방침 동의</string>
+    <string name="start_msg">한성대IN 시작하기</string>
+    <string name="permission">개인정보 취급방침</string>
+    <string name="permission_title1">한성人 여러분 반갑습니다!</string>
+    <string name="permission_title2">ID/PW는 보안 기술로 안전하게 전송됩니다.</string>
+    <string name="permission_title3">한성대IN은 여러분의 권리를 보호합니다.</string>
+    <string name="permission_title4">한성대IN 개발팀에서는 사용자와 관련된\n어떠한 정보도 수집하지 않습니다.</string>
+    <string name="permission_msg1">ID(학번 및 사번)/PW(종합정보시스템 비밀번호)는 한성대학교 서버에 접속하기 위해서만 사용됩니다. 또한 로그인 시 입력하는 정보는 본인의 기기에만 저장됩니다.</string>
+    <string name="permission_msg2">한성대IN에서는 로그인 할 때 보안 기술(HTTPS)을 사용하여 ID와 PW를 안전하게 전송합니다.</string>
+    <string name="permission_msg3">본 문서는 한성대IN 애플리케이션 등록과 관련된 <![CDATA[\'Apple App Store\'의 \'개인정보 취급방침\' / \'Google Play Store\'의 \'개인정보 보호정책\'에 제공됩니다.]]></string>
+    <string name="permission_msg4">▪︎ 공고일자: 2017년 10월 2일\n▪︎ 시행일자: 2017년 10월 3일</string>
+    <string name="permission_agree">개인정보 취급방침에 동의합니다</string>
+    <string name="permission_refuse">동의하지 않습니다.</string>
+    <string name="address_activity">교직원 주소록</string>
+    <string name="setting_activity">설정</string>
+    <string name="search_hint">부서, 직함, 성명, 연락처로 검색</string>
+    <string name="favorite">즐겨찾기</string>
+    <string name="no_favorite">추가된 항목이 없습니다.</string>
+    <string name="search_result">검색결과</string>
+    <string name="number_of_search_result">건</string>
+    <string name="call">로 전화걸기</string>
+    <string name="copy">복사</string>
+    <string name="email">로 메일 보내기</string>
+    <string name="cancel">닫기</string>
+</resources>
