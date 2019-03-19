@@ -11,15 +11,15 @@
         android:layout_height="match_parent"
         android:background="#ffffff">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/address_img"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center_horizontal"
-            android:src="#000000"
-            app:civ_border_width="0dp"/>
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/address_img"-->
+            <!--android:layout_width="125dp"-->
+            <!--android:layout_height="125dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:src="#000000"-->
+            <!--app:civ_border_width="0dp"/>-->
 
         <TextView
             android:id="@+id/address_name"

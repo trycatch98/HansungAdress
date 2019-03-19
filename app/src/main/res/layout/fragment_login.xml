@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="trycatch.hs.hansungadress.ui.login.LoginViewModel"/>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="trycatch.hs.hansungadress.ui.login.LoginFragment"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:background="#ffffff"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/sky_blue"
+            android:textSize="35sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_guide"
+            android:textColor="#808080"
+            android:textSize="10sp"
+            android:layout_marginTop="20dp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintEnabled="false"
+            app:boxStrokeColor="@color/colorAccent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/id_hint"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingLeft="13dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:textColor="#000000"
+                android:textSize="15sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_pw"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintEnabled="false"
+            app:boxStrokeColor="@color/colorAccent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="13dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:hint="@string/pw_hint"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:textColor="#000000"
+                android:textSize="15sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--<EditText-->
+            <!--android:id="@+id/et_id"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="@drawable/gray_selector"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:paddingLeft="13dp"-->
+            <!--android:focusable="true"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--android:inputType="number"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:hint="@string/id_hint"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="15sp"-->
+            <!--android:maxLength="6"/>-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/et_pw"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="@drawable/gray_selector"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:paddingLeft="13dp"-->
+            <!--android:focusable="true"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--android:hint="@string/pw_hint"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:imeOptions="actionDone"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="15sp"/>-->
+
+        <Button
+            android:id="@+id/start_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#f8f8f8"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="13dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:hint="@string/start_msg"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <CheckBox
+                android:id="@+id/guide_msg_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#33ccff"/>
+
+            <TextView
+                android:id="@+id/agree_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="내용을 확인했습니다."
+                android:textSize="15sp"
+                android:textColor="@color/sky_blue"
+                android:lineSpacingExtra="5dp"
+                android:layout_alignBaseline="@+id/guide_msg_agree"
+                android:layout_toEndOf="@+id/guide_msg_agree" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/guide_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/guide_msg_agree"
+            android:layout_toEndOf="@+id/guide_msg_agree"
+            android:lineSpacingExtra="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/dummy"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+    </LinearLayout>
+</layout>

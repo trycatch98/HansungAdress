@@ -1,15 +1,21 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "trycatch.hs.hansungadress"
+        applicationId "try.catch.st.hs.hansungadress"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -17,26 +23,71 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "android.arch.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.core:core-ktx:$core_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_v4_version"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    //anko
+    implementation "org.jetbrains.anko:anko:$anko_version"
+
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+
+    //koin
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-scope:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+    //rx
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+    implementation "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
+
+    //material
+    implementation "com.google.android.material:material:$material_version"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    implementation "org.jsoup:jsoup:1.11.3"
+}
+
+/*dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.jakewharton:butterknife:+'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:+'
-    compile 'com.squareup.retrofit2:retrofit:+'
-    compile 'com.squareup.retrofit2:converter-gson:+'
-    compile 'com.squareup.okhttp3:okhttp:+'
-    compile 'com.squareup.okhttp3:okhttp-urlconnection:+'
-    compile 'com.squareup.okhttp3:logging-interceptor:+'
-    compile 'org.jsoup:jsoup:+'
-    compile 'org.greenrobot:eventbus:+'
-    compile 'com.android.support:design:+'
-    compile 'com.github.bumptech.glide:glide:+'
-    compile 'de.hdodenhof:circleimageview:+'
-    testCompile 'junit:junit:4.12'
-}
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'com.jakewharton:butterknife:9.0.0-rc2'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:+'
+    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'org.greenrobot:eventbus:+'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    testImplementation 'junit:junit:4.12'
+}*/
