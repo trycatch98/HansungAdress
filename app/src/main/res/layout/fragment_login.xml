@@ -49,13 +49,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/id_hint"
+                android:textCursorDrawable="@null"
                 android:inputType="number"
-                android:maxLength="6"
+                android:maxLength="7"
                 android:paddingLeft="13dp"
                 android:paddingTop="0dp"
                 android:paddingBottom="0dp"
                 android:textColor="#000000"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:text="@={vm.id}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,10 +77,12 @@
                 android:paddingTop="0dp"
                 android:paddingBottom="0dp"
                 android:hint="@string/pw_hint"
+                android:textCursorDrawable="@null"
                 android:inputType="textPassword"
                 android:imeOptions="actionDone"
                 android:textColor="#000000"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:text="@={vm.password}" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <!--<EditText-->
@@ -113,20 +117,37 @@
             <!--android:textStyle="bold"-->
             <!--android:textSize="15sp"/>-->
 
-        <Button
-            android:id="@+id/start_btn"
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#f8f8f8"
+            android:backgroundTint="@{vm.allConditionClear ? @color/colorAccent : @color/colorDisable}"
             android:layout_marginTop="25dp"
             android:paddingLeft="13dp"
-            android:enabled="false"
+            android:enabled="@{vm.allConditionClear}"
             android:gravity="center"
             android:hint="@string/start_msg"
             android:textColor="#ffffff"
             android:textSize="15sp"
             android:textStyle="bold"
-            style="?android:attr/borderlessButtonStyle"/>
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:onClick="@{() -> vm.login()}"/>
+
+        <!--<Button-->
+            <!--android:id="@+id/start_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--android:layout_marginTop="25dp"-->
+            <!--android:paddingLeft="13dp"-->
+            <!--android:enabled="@{vm.allConditionClear}"-->
+            <!--android:gravity="center"-->
+            <!--android:hint="@string/start_msg"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="15sp"-->
+            <!--android:textStyle="bold"-->
+            <!--style="?android:attr/borderlessButtonStyle" />-->
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -137,7 +158,8 @@
                 android:id="@+id/guide_msg_agree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="#33ccff"/>
+                android:buttonTint="#33ccff"
+                android:checked="@={vm.guideAgree}"/>
 
             <TextView
                 android:id="@+id/agree_msg"
@@ -162,7 +184,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="@{vm.guideMsg}"/>
 
         <EditText
             android:id="@+id/dummy"

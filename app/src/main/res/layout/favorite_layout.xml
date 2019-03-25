@@ -1,42 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff">
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="trycatch.hs.hansungadress.ui.main.MainViewModel"/>
+    </data>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F7F8F8"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="@string/favorite"
-        android:textSize="15sp"
-        android:textColor="#808080"
-        android:textStyle="bold"/>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/favorite_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
 
         <TextView
-            android:id="@+id/no_favorite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/no_favorite"
-            android:layout_marginTop="30dp"
-            android:gravity="center"/>
+            android:background="#F7F8F8"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/favorite"
+            android:textSize="15sp"
+            android:textColor="#808080"
+            android:textStyle="bold"/>
 
-    </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</LinearLayout>
+            <ListView
+                android:id="@+id/favorite_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <TextView
+                android:id="@+id/no_favorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_favorite"
+                android:layout_marginTop="30dp"
+                android:gravity="center"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

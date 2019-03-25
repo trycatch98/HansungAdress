@@ -16,6 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "INFO_BASE_URL", "\"https://info.hansung.ac.kr\"")
     }
     buildTypes {
         release {
@@ -46,7 +47,6 @@ dependencies {
 
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
 
     //koin
     implementation "org.koin:koin-android:$koin_version"

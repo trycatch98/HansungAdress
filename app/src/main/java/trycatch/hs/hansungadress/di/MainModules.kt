@@ -3,9 +3,10 @@ package trycatch.hs.hansungadress.di
 import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 import trycatch.hs.hansungadress.ui.login.LoginViewModel
+import trycatch.hs.hansungadress.ui.main.MainViewModel
 
-val loginModules = module {
+val mainModules = module {
     viewModel {
-        LoginViewModel()
+        MainViewModel(get(), get())
     }
 }

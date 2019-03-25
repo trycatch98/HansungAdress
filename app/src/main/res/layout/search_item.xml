@@ -1,64 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_vertical">
+<layout>
+    <data>
+        <variable
+            name="data"
+            type="trycatch.hs.hansungadress.data.remote.model.AddressModel"/>
+    </data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="10dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/search_item_name"
-            android:layout_width="100dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:textColor="@color/sky_blue"
-            android:textSize="17sp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="10dp">
 
-        <TextView
-            android:id="@+id/search_item_department"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/search_item_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/sky_blue"
+                android:textSize="17sp"
+                android:text="@{data.name}"/>
+
+            <TextView
+                android:id="@+id/search_item_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:text="@{data.department}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="17sp"/>
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/search_item_position"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:textColor="#808080"
+                android:textSize="13sp"
+                android:text="@{data.position}"/>
+
+            <TextView
+                android:id="@+id/search_item_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:textColor="#808080"
+                android:textSize="13sp"
+                android:text="@{data.phone}"/>
+
+            <ImageView
+                android:id="@+id/search_item_favorite"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/favorite_off"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
-
-        <TextView
-            android:id="@+id/search_item_position"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:textColor="#808080"
-            android:textSize="13sp"/>
-
-        <TextView
-            android:id="@+id/search_item_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="10dp"
-            android:textColor="#808080"
-            android:textSize="13sp"/>
-
-        <ImageView
-            android:id="@+id/search_item_favorite"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/favorite_off"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</layout>
