@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.error
 import org.koin.android.viewmodel.ext.android.viewModel
 import trycatch.hs.hansungadress.R
+import trycatch.hs.hansungadress.data.remote.model.AddressModel
+import trycatch.hs.hansungadress.databinding.AddressInfoDialogBinding
 import trycatch.hs.hansungadress.databinding.FragmentMainBinding
 import trycatch.hs.hansungadress.ui.login.LoginViewModel
 import java.util.*
@@ -50,6 +53,14 @@ class MainFragment : Fragment(), AnkoLogger {
             binding.searchResultLayout.root.visibility = View.GONE
             binding.searchCancelBtn.visibility = View.GONE
             mainViewModel.query.value = ""
+        }
+
+        binding.searchResultLayout.searchResultList.setOnItemClickListener { parent, view, position, id ->
+            val bottomSheetDialog = BottomSheetDialog(parent.context)
+            val binding = AddressInfoDialogBinding.inflate(layoutInflater, null, false)
+            binding.data = parent.adapter.getItem(position) as? AddressModel
+            bottomSheetDialog.setContentView(binding.root)
+            bottomSheetDialog.show()
         }
 
         return binding.root

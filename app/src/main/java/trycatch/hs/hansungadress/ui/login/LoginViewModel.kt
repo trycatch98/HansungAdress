@@ -27,7 +27,7 @@ class LoginViewModel(private val infoApi: InfoApiService, private val prefs: Pre
     private val _error: MutableLiveData<Throwable> = MutableLiveData()
     val error: LiveData<Throwable> get() = _error
 
-    val guideMsg: Spanned = StringBuilder().apply {
+    val guideMsg:Spanned = StringBuilder().apply {
         append("한성대학교 교직원 연락처를 조회할 수 있습니다.<br>업무적인 용도 외에 사용을 금합니다.<br>")
         append("<font color=#000000><strong>타인의 개인정보 </strong></font><font color=#ff0000>유출 시</font><font color=#000000><strong> 개인정보 보호법에 따라<br>처벌</strong></font>")
         append(" 을 받을 수 있음을 알려드립니다.")

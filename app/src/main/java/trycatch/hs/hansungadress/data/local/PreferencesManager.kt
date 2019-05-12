@@ -46,6 +46,6 @@ class PreferencesManager(private val context: Context) {
     }
 
     fun setInfoCookies(cookies: Map<String, String>) = prefs.edit {
-        putString(PREF_KEY_INFO_COOKIES, gson.toJson(cookies))
+        putString(PREF_KEY_GINFO_COOKIES, gson.toJson(cookies))
     }
 }
